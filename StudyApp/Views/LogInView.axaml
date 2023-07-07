@@ -1,0 +1,24 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="StudyApp.Views.LogInView">
+        <StackPanel HorizontalAlignment="Center" >
+
+                <Image Source="/Assets/Titles/Study-Bunny.png" Classes="title"/>
+                <Image Source="/Assets/Cover.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="450" Margin="0,0,0,8"/>
+                <TextBox Text="{Binding Username}" Classes="Login" Watermark="Username"/>
+                <TextBox Text="{Binding Password}" Classes="Login" Watermark="Password" PasswordChar="*"/>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button Command="{Binding Register}" Classes="NavButton" Height="80"> <Image Source="/Assets/Buttons/SignUp.png" /> </Button>
+                        <Button Command="{Binding Login}" Classes="NavButton" Height="80"> <Image Source="/Assets/Buttons/Login.png" /> </Button>
+                </StackPanel>
+
+                <DockPanel DockPanel.Dock="Bottom" >
+                        <TextBlock Classes="footer" Text="Anastasia Bondarenko    -     Mathews Velez    -    Christina Chiappini"/>
+                </DockPanel>
+
+        </StackPanel>
+</UserControl>

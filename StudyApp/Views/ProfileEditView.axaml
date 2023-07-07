@@ -1,0 +1,186 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="StudyApp.Views.ProfileEditView"
+             Padding="10">
+    <StackPanel Classes="Main">
+
+
+        <StackPanel Classes="TopContent">
+
+            <Grid ShowGridLines="True" ColumnDefinitions="1.5*,2.5*,2.5*,1.5*" RowDefinitions="1*,4*,4*">
+
+                <Button Command="{Binding Leave}" Classes="NavButton" Grid.Row="0" Grid.Column="0">
+                    <Image Source="/Assets/Buttons/Back.png"/>
+                </Button>
+
+                <Image Source="/Assets/Titles/EditProfile.png" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"/>
+                
+                <StackPanel Classes="ListDisplayPanels" Grid.Row="0" Grid.Column="3" Grid.RowSpan="2">
+                    <TextBlock Classes="h3" Text="Current Courses" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    
+                        <StackPanel Classes="ListPanelEditProfile" Grid.Row="1" Grid.Column="0">
+                        <ScrollViewer Classes="ListPanelEditProfile">
+                            <ItemsRepeater Items="{Binding Profile.CurrentCourses}">
+                            <ItemsRepeater.ItemTemplate>
+                                <DataTemplate>
+                                <Border Margin="10,0,0,0" Padding="2">
+                                <TextBlock Text="{Binding}"/>
+                                </Border>
+                                </DataTemplate>
+                            </ItemsRepeater.ItemTemplate>
+                            </ItemsRepeater>
+                        </ScrollViewer>
+                        </StackPanel>
+
+                    <TextBlock Classes="h3" Text="Desired Courses" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Border Classes="ListPanelEditProfileBorder" Grid.Row="3" Grid.Column="0">
+                    <Border Classes="AvaloniaSucksEditProfileBorderFix">
+                        <StackPanel Classes="ListPanelEditProfile">
+                        <ScrollViewer Classes="ListPanelEditProfile">
+                            <ItemsRepeater Items="{Binding Profile.DesiredCourses}">
+                            <ItemsRepeater.ItemTemplate>
+                                <DataTemplate>
+                                <Border Margin="10,0,0,0" Padding="2">
+                                <TextBlock Text="{Binding}"/>
+                                </Border>
+                                </DataTemplate>
+                            </ItemsRepeater.ItemTemplate>
+                            </ItemsRepeater>
+                        </ScrollViewer>
+                        </StackPanel>
+                    </Border>
+                    </Border>
+
+                    <TextBlock Classes="h3" Text="Previous Schools" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Border Classes="ListPanelEditProfileBorder" Grid.Row="1" Grid.Column="1">
+                    <Border Classes="AvaloniaSucksEditProfileBorderFix">
+                        <StackPanel Classes="ListPanelEditProfile">
+                        <ScrollViewer Classes="ListPanelEditProfile">
+                            <ItemsRepeater Items="{Binding Profile.PreviousSchools}">
+                            <ItemsRepeater.ItemTemplate>
+                                <DataTemplate>
+                                <Border Margin="10,0,0,0" Padding="2">
+                                <TextBlock Text="{Binding}"/>
+                                </Border>
+                                </DataTemplate>
+                            </ItemsRepeater.ItemTemplate>
+                            </ItemsRepeater>
+                        </ScrollViewer>
+                        </StackPanel>
+                    </Border>
+                    </Border>
+
+                    <TextBlock Classes="h3" Text="Interests" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Border Classes="ListPanelEditProfileBorder" Grid.Row="3" Grid.Column="1">
+                    <Border Classes="AvaloniaSucksEditProfileBorderFix">
+                        <StackPanel Classes="ListPanelEditProfile">
+                        <ScrollViewer Classes="ListPanelEditProfile">
+                            <ItemsRepeater Items="{Binding Profile.Hobbies}">
+                            <ItemsRepeater.ItemTemplate>
+                                <DataTemplate>
+                                <Border Margin="10,0,0,0" Padding="2">
+                                <TextBlock Text="{Binding}"/>
+                                </Border>
+                                </DataTemplate>
+                            </ItemsRepeater.ItemTemplate>
+                            </ItemsRepeater>
+                        </ScrollViewer>
+                        </StackPanel>
+                    </Border>
+                    </Border>
+                </StackPanel>
+
+                <StackPanel Classes="ImageSelector" Grid.Row="1" Grid.Column="0">
+                    
+                </StackPanel>
+
+                <StackPanel Classes="EditStringFieldsOne" Grid.Row="1" Grid.Column="1">
+                    <TextBlock Text="FirstName"  Classes="h2"/>
+                    <TextBox AcceptsReturn="False" Text="{Binding Profile.FirstName}" Watermark="FirstName"/>
+                    <TextBlock Text="LastName"  Classes="h2"/>
+                    <TextBox AcceptsReturn="False" Text="{Binding Profile.LastName}" Watermark="LastName"/>
+                    <TextBlock Text="Pronouns"  Classes="h2"/>
+                    <TextBox AcceptsReturn="False" Text="{Binding Profile.Pronouns}" Watermark="LastName"/>
+                </StackPanel>
+
+                <StackPanel Classes="EditStringFieldsTwo" Grid.Row="1" Grid.Column="2">
+                    <TextBlock Text="Age" Classes="h2"/>
+                    <TextBox AcceptsReturn="False" Text="{Binding Profile.Age}" Watermark="Age"/>
+                    <TextBlock Text="Program" Classes="h2"/>
+                    <TextBox AcceptsReturn="False" Text="{Binding Profile.CurrentProgram}" Watermark="Program"/>
+                    <TextBlock Text="School" Classes="h2"/>
+                    <TextBox AcceptsReturn="False" Text="{Binding Profile.CurrentSchool}" Watermark="School"/>
+                    <!-- <TextBlock Text="Hobbies" Classes="h2"/>
+                    <ComboBox Name="Select" Items="{Binding Profile.Hobbies}">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBox Text="{Binding}"/>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox> -->
+                </StackPanel>
+
+                <StackPanel Classes="ListEditors" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal">
+                    <StackPanel>
+                        <TextBlock Text="Hobby" Classes="h2" Width="129"/>
+                        <TextBox AcceptsReturn="False" Text="{Binding Profile.FirstName}" Watermark="Hobby"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Button Command="{Binding Leave}" Classes="ListEditButton"><Image Source="/Assets/Buttons/AddHobby.png"/></Button>
+                            <Button Command="{Binding Leave}" Classes="ListEditButton"><Image Source="/Assets/Buttons/RemoveHobby.png"/></Button>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel>
+                        <TextBlock Text="Current Course" Classes="h2" Width="129"/>
+                        <TextBox AcceptsReturn="False" Text="{Binding Profile.FirstName}" Watermark="Current Course"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Button Command="{Binding Leave}" Classes="ListEditButton"><Image Source="/Assets/Buttons/AddCurrentCourse.png"/></Button>
+                            <Button Command="{Binding Leave}" Classes="ListEditButton"><Image Source="/Assets/Buttons/RemoveCurrentCourse.png"/></Button>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel>
+                        <TextBlock Text="Desired Course" Classes="h2" Width="129" HorizontalAlignment="Center"/>
+                        <TextBox AcceptsReturn="False" Text="{Binding Profile.FirstName}" Watermark="Desired Course"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Button Command="{Binding Leave}" Classes="ListEditButton"><Image Source="/Assets/Buttons/AddDesiredCourse.png"/></Button>
+                            <Button Command="{Binding Leave}" Classes="ListEditButton"><Image Source="/Assets/Buttons/RemoveDesiredCourse.png"/></Button>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel>
+                        <TextBlock Text="Past School" Classes="h2" Width="129" HorizontalAlignment="Center"/>
+                        <TextBox AcceptsReturn="False" Text="{Binding Profile.FirstName}" Watermark="Past School"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Button Command="{Binding Leave}" Classes="ListEditButton"><Image Source="/Assets/Buttons/AddPastSchool.png"/></Button>
+                            <Button Command="{Binding Leave}" Classes="ListEditButton"><Image Source="/Assets/Buttons/RemovePastSchool.png"/></Button>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+
+            </Grid>
+
+        </StackPanel>
+
+
+        <StackPanel Classes="BottomContent">
+
+            <Grid ShowGridLines="True" ColumnDefinitions="2*,1.5*,1*" RowDefinitions="Auto,Auto" Margin="4">
+                <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
+                    <Button Command="{Binding Ok}" Classes="IconButton" ><Image Source="/Assets/Icons/DeleteAccount.png"/></Button>
+                    <Button Command="{Binding Ok}" Classes="IconButton"><Image Source="/Assets/Icons/EraseProfile.png"/></Button>
+                    <Button Command="{Binding Ok}" Classes="IconButton"><Image Source="/Assets/Icons/ChangePassword.png"/></Button>
+                </StackPanel>
+                <Button Command="{Binding Ok}" Classes="SaveChanges" Grid.Row="0" Grid.Column="1" Width="200" Margin="22,0,0,0">
+                    <Image Source="/Assets/Buttons/SaveChanges.png"/>
+                </Button>
+                <Image Source="/Assets/Decorations/Writing.png" Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" Width="200"/>
+                <TextBlock Classes="footer" Margin="190,0,0,0" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                    Text="Anastasia Bondarenko    -     Mathews Velez    -    Christina Chiappini"/>
+            </Grid>
+
+        </StackPanel>
+
+
+    </StackPanel>
+</UserControl>

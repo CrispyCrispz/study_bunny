@@ -1,0 +1,48 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="200" d:DesignHeight="300"
+             x:Class="StudyApp.Views.EventDisplayView"
+             Padding="30">
+  <StackPanel Margin="10,0,0,0">
+    <TextBlock Text="{Binding Event.Title}"
+                FontSize="28"/>
+
+    <StackPanel Orientation="Horizontal" Spacing="10">
+      <StackPanel Width="300" Spacing="5">
+        <TextBlock Text="{Binding Event.Description}"/>
+        <TextBlock Text="{Binding Event.Owner.Username, StringFormat='Organized By: {0}'}"/>
+        <TextBlock Text="Attendees:"/>
+        <ItemsRepeater Items="{Binding Event.Attendees}">
+          <ItemsRepeater.ItemTemplate>
+            <DataTemplate>
+             <Border Margin="10,0,0,0" Padding="2">
+               <TextBlock Text="{Binding Username}"/>
+              </Border>
+            </DataTemplate>
+          </ItemsRepeater.ItemTemplate>
+        </ItemsRepeater>
+      </StackPanel>
+      <StackPanel Spacing="2">
+        <TextBlock Text="{Binding Event.Location, StringFormat='Location: {0}'}"/>
+        <TextBlock Text="{Binding Event.DateTime, StringFormat='Time: {0}'}"/>
+       <TextBlock Text="{Binding Event.Subject, StringFormat='Subject: {0}'}"
+                   IsVisible="{Binding Event.Subject, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"/> 
+        <TextBlock Text="{Binding Event.Course, StringFormat='Course: {0}'}"
+                   IsVisible="{Binding Event.RelatedCourse, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"/>
+        <TextBlock Text="{Binding Event.RelatedProgram, StringFormat='Program: {0}'}"
+                   IsVisible="{Binding Event.Program, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"/>
+        <TextBlock Text="{Binding Event.RelatedSchool, StringFormat='School: {0}'}"
+                   IsVisible="{Binding Event.RelatedSchool, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"/>
+        <Button Command="{Binding Attend}" IsVisible="{Binding AttendVisible}" Classes="MiniIcon">
+          <Image Source="Assets/Icons/Attend.png"/>
+        </Button>
+        <Button Command="{Binding Unattend}" IsVisible="{Binding UnattendVisible}" Classes="MiniIcon">
+          <Image Source="/Assets/Icons/Unattend.png"/>
+        </Button>
+      </StackPanel>
+    </StackPanel>    
+    <Button DockPanel.Dock="Bottom" Command="{Binding Leave}" Classes="NavButton"><Image Source="/Assets/Buttons/Back.png"/></Button>   
+  </StackPanel>
+</UserControl>

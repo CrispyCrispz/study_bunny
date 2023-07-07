@@ -1,0 +1,170 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="StudyApp.Views.ProfileDisplayView">
+  <StackPanel Classes="Main" Orientation="Horizontal" HorizontalAlignment="Center" >
+
+
+
+
+    <StackPanel Spacing="10" Width="740" Height="710">
+
+      <Grid ColumnDefinitions="1.2*,4*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto"  Margin="4">
+
+        <TextBlock Text="{Binding Profile.User.Username}" Classes="h1" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1"/>
+        
+        <StackPanel Spacing="2" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">
+          <Image Source="/Assets/lil-bunny.png" Width="100" Margin="60,40,35,20"/>
+
+          <TextBlock Text="First Name" Classes="h2"/>
+          <TextBlock Text="{Binding Profile.FirstName}" Classes="h4" IsVisible="{Binding Profile.FirstName, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"/>
+
+          <TextBlock Text="Last Name" Classes="h2"/>
+          <TextBlock Text="{Binding Profile.LastName}" Classes="h4" IsVisible="{Binding Profile.LastName, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"/>
+
+          <TextBlock Text="Pronouns" Classes="h2"/>
+          <TextBlock Text="{Binding Profile.Pronouns}" Classes="h4" IsVisible="{Binding Profile.Pronouns, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"/>  
+
+          <TextBlock Text="Age" Classes="h2"/>
+          <TextBlock Text="{Binding Profile.Age}" Classes="h4" IsVisible="{Binding Profile.Age, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"/>
+
+          <TextBlock Text="Biography" Classes="h2" />
+        </StackPanel>
+
+        <TextBlock Text="{Binding Profile.Biography}" Classes="h4" IsVisible="{Binding Profile.Biography, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
+          Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"/>   
+
+        <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" >
+          <Grid  ColumnDefinitions="Auto,Auto" RowDefinitions="Auto,Auto,Auto,Auto"  Margin="4">
+
+            <TextBlock Classes="h2" Text="Current Courses" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Border Classes="ListPanelBorder" Grid.Row="1" Grid.Column="0">
+              <Border Classes="AvaloniaSucksBorderFix">
+                <StackPanel Classes="ListPanel">
+                  <ScrollViewer Classes="ListPanel">
+                    <ItemsRepeater Items="{Binding Profile.CurrentCourses}">
+                      <ItemsRepeater.ItemTemplate>
+                        <DataTemplate>
+                        <Border Margin="10,0,0,0" Padding="2">
+                          <TextBlock Text="{Binding}"/>
+                          </Border>
+                        </DataTemplate>
+                      </ItemsRepeater.ItemTemplate>
+                    </ItemsRepeater>
+                  </ScrollViewer>
+                </StackPanel>
+              </Border>
+            </Border>
+
+            <TextBlock Classes="h2" Text="Desired Courses" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Border Classes="ListPanelBorder" Grid.Row="3" Grid.Column="0">
+              <Border Classes="AvaloniaSucksBorderFix">
+                <StackPanel Classes="ListPanel">
+                  <ScrollViewer Classes="ListPanel">
+                    <ItemsRepeater Items="{Binding Profile.DesiredCourses}">
+                      <ItemsRepeater.ItemTemplate>
+                        <DataTemplate>
+                        <Border Margin="10,0,0,0" Padding="2">
+                          <TextBlock Text="{Binding}"/>
+                          </Border>
+                        </DataTemplate>
+                      </ItemsRepeater.ItemTemplate>
+                    </ItemsRepeater>
+                  </ScrollViewer>
+                </StackPanel>
+              </Border>
+            </Border>
+
+            <TextBlock Classes="h2" Text="Previous Schools" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Border Classes="ListPanelBorder" Grid.Row="1" Grid.Column="1">
+              <Border Classes="AvaloniaSucksBorderFix">
+                <StackPanel Classes="ListPanel">
+                  <ScrollViewer Classes="ListPanel">
+                    <ItemsRepeater Items="{Binding Profile.PreviousSchools}">
+                      <ItemsRepeater.ItemTemplate>
+                        <DataTemplate>
+                        <Border Margin="10,0,0,0" Padding="2">
+                          <TextBlock Text="{Binding}"/>
+                          </Border>
+                        </DataTemplate>
+                      </ItemsRepeater.ItemTemplate>
+                    </ItemsRepeater>
+                  </ScrollViewer>
+                </StackPanel>
+              </Border>
+            </Border>
+
+            <TextBlock Classes="h2" Text="Interests" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Border Classes="ListPanelBorder" Grid.Row="3" Grid.Column="1">
+              <Border Classes="AvaloniaSucksBorderFix">
+                <StackPanel Classes="ListPanel">
+                  <ScrollViewer Classes="ListPanel">
+                    <ItemsRepeater Items="{Binding Profile.Hobbies}">
+                      <ItemsRepeater.ItemTemplate>
+                        <DataTemplate>
+                        <Border Margin="10,0,0,0" Padding="2">
+                          <TextBlock Text="{Binding}"/>
+                          </Border>
+                        </DataTemplate>
+                      </ItemsRepeater.ItemTemplate>
+                    </ItemsRepeater>
+                  </ScrollViewer>
+                </StackPanel>
+              </Border>
+            </Border>
+
+          </Grid>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Grid.Column="0" >
+
+          <TextBlock Text="Current Program" Classes="h2"/>
+          <TextBlock Text="{Binding Profile.CurrentProgram.Name}" Classes="h4" IsVisible="{Binding Profile.CurrentProgram.Name, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"/>
+
+          <TextBlock Text="Current School" Classes="h2"/>
+          <TextBlock Text="{Binding Profile.CurrentSchool.SchoolName}" Classes="h4" IsVisible="{Binding Profile.CurrentSchool.SchoolName, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"/>
+        
+        </StackPanel>
+
+        <Button Classes="NavButton" Command="{Binding $parent[Window].DataContext.CreateEvent}" Grid.Row="4" Grid.Column="0" Grid.RowSpan="2" VerticalAlignment="Center" Margin="20,5,20,20">
+          <Image Source="/Assets/Buttons/Logout.png"/>
+        </Button>
+
+        <Image Source="/Assets/Decorations/Sleeping.png" Width="300" Grid.Row="3" Grid.Column="1" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,7,0,0"/>
+        
+        <TextBlock Classes="footer" Margin="0,30,0,0" Text="Anastasia Bondarenko    -     Mathews Velez    -    Christina Chiappini" Grid.Row="5" Grid.Column="1"/>
+      
+      </Grid>
+
+    </StackPanel>
+
+
+
+
+
+    <StackPanel HorizontalAlignment="Center" Margin="0">
+      <Button Classes="IconButton" Command="{Binding $parent[Window].DataContext.CreateEvent}" Margin="0,40,0,20">
+        <Image Source="/Assets/Icons/CreateEvent.png"/>
+      </Button>
+      <Button Classes="IconButton" Command="{Binding $parent[Window].DataContext.UserDisplayEvents}">
+        <Image Source="/Assets/Icons/Messages.png"/>
+      </Button>
+      <Button Classes="IconButton" Command="{Binding $parent[Window].DataContext.UserDisplayEvents}">
+        <Image Source="/Assets/Icons/MyEvents.png"/>
+      </Button>
+      <Button Classes="IconButton" Command="{Binding $parent[Window].DataContext.SearchProfile}">
+        <Image Source="/Assets/Icons/SearchProfile.png"/>
+      </Button>
+      <Button Classes="IconButton" Command="{Binding $parent[Window].DataContext.SearchEvent}">
+        <Image Source="/Assets/Icons/SearchEvent.png"/>
+      </Button>
+      <Button Classes="IconButton" Command="{Binding $parent[Window].DataContext.EditProfile}" Margin="0,0,0,0">
+        <Image Source="/Assets/Icons/EditProfile.png"/>
+      </Button>
+    </StackPanel>
+
+
+  </StackPanel>
+</UserControl>

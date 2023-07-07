@@ -1,0 +1,38 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="200" d:DesignHeight="300"
+             x:Class="StudyApp.Views.EventsDisplayView"
+             Padding="30">
+  <StackPanel Margin="10,0,0,0">
+    <TextBlock Text="Created Events"
+                FontSize="28"/>
+    
+    <StackPanel Orientation="Vertical" Spacing="10">
+      <StackPanel Width="300" Spacing="5">
+        <TextBlock Text="View your events"/>
+      </StackPanel>
+
+      <Button DockPanel.Dock="Top" Command="{Binding Leave}" Classes="NavButton"><Image Source="/Assets/Buttons/Back.png"/></Button>
+
+      <StackPanel Spacing="2">
+      <ItemsRepeater Items="{Binding Events}">
+          <ItemsRepeater.ItemTemplate>
+            <DataTemplate>
+             <Border Margin="10,0,0,0" Padding="2">
+                <StackPanel>
+                  <Label Content="{Binding Title}" />
+                  <TextBlock Text="{Binding Description}"/>
+                  <Button Content="Edit Event" CommandParameter="{Binding}"
+                    Command="{Binding $parent[Window].DataContext.EditEvent}"/>
+                </StackPanel>
+              </Border>
+            </DataTemplate>
+          </ItemsRepeater.ItemTemplate>
+        </ItemsRepeater>
+
+      </StackPanel>
+    </StackPanel>       
+  </StackPanel>
+</UserControl>

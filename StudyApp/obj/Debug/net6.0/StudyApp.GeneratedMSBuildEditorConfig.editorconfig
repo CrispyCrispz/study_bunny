@@ -1,0 +1,47 @@
+is_global = true
+build_property.AvaloniaNameGeneratorBehavior = InitializeComponent
+build_property.AvaloniaNameGeneratorDefaultFieldModifier = internal
+build_property.AvaloniaNameGeneratorFilterByPath = *
+build_property.AvaloniaNameGeneratorFilterByNamespace = *
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = StudyApp
+build_property.ProjectDir = c:\Users\chris\Documents\Cegep_Code\Winter_2023\Programming_AndrewBodzay\studybuddy\StudyApp\
+
+[c:/Users/chris/Documents/Cegep_Code/Winter_2023/Programming_AndrewBodzay/studybuddy/StudyApp/App.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[c:/Users/chris/Documents/Cegep_Code/Winter_2023/Programming_AndrewBodzay/studybuddy/StudyApp/Views/CreateEventView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[c:/Users/chris/Documents/Cegep_Code/Winter_2023/Programming_AndrewBodzay/studybuddy/StudyApp/Views/EventDisplayView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[c:/Users/chris/Documents/Cegep_Code/Winter_2023/Programming_AndrewBodzay/studybuddy/StudyApp/Views/EventEditView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[c:/Users/chris/Documents/Cegep_Code/Winter_2023/Programming_AndrewBodzay/studybuddy/StudyApp/Views/EventsDisplayView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[c:/Users/chris/Documents/Cegep_Code/Winter_2023/Programming_AndrewBodzay/studybuddy/StudyApp/Views/LogInView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[c:/Users/chris/Documents/Cegep_Code/Winter_2023/Programming_AndrewBodzay/studybuddy/StudyApp/Views/MainWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[c:/Users/chris/Documents/Cegep_Code/Winter_2023/Programming_AndrewBodzay/studybuddy/StudyApp/Views/ProfileDisplayView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[c:/Users/chris/Documents/Cegep_Code/Winter_2023/Programming_AndrewBodzay/studybuddy/StudyApp/Views/ProfileEditView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[c:/Users/chris/Documents/Cegep_Code/Winter_2023/Programming_AndrewBodzay/studybuddy/StudyApp/Views/SearchEventsView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[c:/Users/chris/Documents/Cegep_Code/Winter_2023/Programming_AndrewBodzay/studybuddy/StudyApp/Views/SearchProfilesView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

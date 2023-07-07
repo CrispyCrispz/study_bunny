@@ -1,0 +1,49 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="StudyApp.Views.SearchProfilesView">
+  <StackPanel Classes="Main" Orientation="Horizontal" Height="730">
+
+    <StackPanel Width="690" Height="700" VerticalAlignment="Top">
+
+      <StackPanel HorizontalAlignment="Center">
+        <Image Classes="title" Source="/Assets/Titles/SearchProfiles.png"/>
+        <TextBox AcceptsReturn="False" Text="{Binding Keyword}" Watermark="Search" Width="500"/>
+      </StackPanel>
+      <StackPanel Height="450">
+          <ItemsRepeater Items="{Binding ProfileResults}">
+            <ItemsRepeater.ItemTemplate>
+              <DataTemplate>
+                <StackPanel Orientation="Horizontal">
+                  <TextBlock Padding="2" VerticalAlignment="Center" Text="{Binding Name}"/>
+                  <Button Content="View Profile"
+                  Command="{Binding $parent[Window].DataContext.ViewProfile}"
+                  CommandParameter="{Binding}"/> 
+                </StackPanel>
+              </DataTemplate>
+            </ItemsRepeater.ItemTemplate>
+          </ItemsRepeater>
+      </StackPanel>
+
+      <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+        <Button Command="{Binding Leave}" Classes="NavButton" Margin="0,0,0,30"><Image Source="/Assets/Buttons/Back.png"/></Button>
+        <TextBlock Classes="footer" Margin="70,0,0,0" Text="Anastasia Bondarenko    -     Mathews Velez    -    Christina Chiappini"/>
+      </StackPanel>
+
+    </StackPanel>
+
+    <StackPanel VerticalAlignment="Top" Width="150">
+      <Button Command="{Binding Leave}" Classes="OpButton" Margin="7,20,7,3"><Image Source="/Assets/Buttons/ViewAll.png"/></Button>
+      <Button Command="{Binding Search}" Classes="OpButton"><Image Source="/Assets/Buttons/SearchByName.png"/></Button>
+      <Button Command="{Binding Search}" Classes="OpButton"><Image Source="/Assets/Buttons/SearchByHobby.png"/></Button>
+      <Button Command="{Binding Search}" Classes="OpButton"><Image Source="/Assets/Buttons/SearchByCourse.png"/></Button>
+      <Button Command="{Binding Search}" Classes="OpButton"><Image Source="/Assets/Buttons/SearchByProgram.png"/></Button>
+      <Button Command="{Binding Search}" Classes="OpButton"><Image Source="/Assets/Buttons/SearchBySchool.png"/></Button>
+      <Button Command="{Binding Search}" Classes="OpButton"><Image Source="/Assets/Buttons/SearchByDescription.png"/></Button>
+      <Image Source="/Assets/Decorations/Strawberries.png"/>
+    </StackPanel>
+
+  </StackPanel>
+</UserControl>
