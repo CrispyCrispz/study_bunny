@@ -1,30 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\chris\\Documents\\Cegep_Code\\Winter_2023\\Programming_AndrewBodzay\\studybuddy\\StudyApp\\StudyApp.csproj": {}
+    "/home/jane/Documents/Portfolio_Code_Projects/study_bunny/StudyApp/StudyApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\chris\\Documents\\Cegep_Code\\Winter_2023\\Programming_AndrewBodzay\\studybuddy\\StudyApp\\StudyApp.csproj": {
+    "/home/jane/Documents/Portfolio_Code_Projects/study_bunny/StudyApp/StudyApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chris\\Documents\\Cegep_Code\\Winter_2023\\Programming_AndrewBodzay\\studybuddy\\StudyApp\\StudyApp.csproj",
+        "projectUniqueName": "/home/jane/Documents/Portfolio_Code_Projects/study_bunny/StudyApp/StudyApp.csproj",
         "projectName": "StudyApp",
-        "projectPath": "C:\\Users\\chris\\Documents\\Cegep_Code\\Winter_2023\\Programming_AndrewBodzay\\studybuddy\\StudyApp\\StudyApp.csproj",
-        "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chris\\Documents\\Cegep_Code\\Winter_2023\\Programming_AndrewBodzay\\studybuddy\\StudyApp\\obj\\",
+        "projectPath": "/home/jane/Documents/Portfolio_Code_Projects/study_bunny/StudyApp/StudyApp.csproj",
+        "packagesPath": "/home/jane/.nuget/packages/",
+        "outputPath": "/home/jane/Documents/Portfolio_Code_Projects/study_bunny/StudyApp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\chris\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/jane/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net7.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {}
           }
         },
@@ -35,8 +35,8 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "dependencies": {
             "Avalonia": {
               "target": "Package",
@@ -97,7 +97,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.405\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.109/RuntimeIdentifierGraph.json"
         }
       }
     }
